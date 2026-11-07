@@ -11,8 +11,8 @@ html .hero--statement .hero__facts { border-top: 0; }
 }
 
 /* The client's saw logo, sized to the bar. */
-.nav__logo .logo-img { height: 56px; width: auto; }
-@media (max-width: 639px) { .nav__logo .logo-img { height: 44px; } }
+.nav__logo .logo-img { height: 44px; width: auto; }
+@media (max-width: 639px) { .nav__logo .logo-img { height: 36px; } }
 
 /* The close sits right above the address instead of a screen apart. */
 html footer.closing > .wrap { grid-template-rows: auto auto; align-content: start; row-gap: var(--s-8); }

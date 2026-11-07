@@ -1,47 +1,12 @@
 import Photo from '../components/Photo';
+import Split, { Head, Rows } from '../components/Split';
 import { Fab, Footer, Nav } from '../components/Chrome';
 
 export const metadata = {
   title: 'Services: windows, doors and staircases | MQ Joinery',
   description:
-    'Made-to-measure box sash windows, French doors, staircases, fitted wardrobes and garden joinery, built in our workshop in Navestock, Romford.',
+    'Traditional box sash and casement windows, staircases and French doors, made to measure in our workshop in Navestock, Romford.',
 };
-
-function Peek({ id, title, line, rows }) {
-  return (
-    <section className="section sec-peek" id={id} aria-labelledby={`${id}-h`}>
-      <div className="wrap">
-        <div className="section-head">
-          <h2 id={`${id}-h`}>{title}</h2>
-          <p>{line}</p>
-        </div>
-        <div className="grid grid--top fill" data-peek="">
-          <ul className="rows span-6">
-            {rows.map((r) => (
-              <li key={r.key} data-peek-to={r.key} tabIndex={0}>
-                <span className="rows__name">{r.name}</span>
-                <p>{r.line}</p>
-              </li>
-            ))}
-          </ul>
-          <div className="frame frame--photo frame--fill span-6 start-7">
-            {rows.map((r, i) => (
-              <Photo
-                key={r.key}
-                className="frame__img"
-                name={r.photo}
-                data-peek-for={r.key}
-                hidden={i === 0 ? undefined : true}
-                fixed
-                pos={r.pos}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 export default function Services() {
   return (
@@ -54,47 +19,153 @@ export default function Services() {
               <div className="hero-copy span-6">
                 <h1 id="hero-h">Windows, doors and staircases, made to measure</h1>
                 <p className="t-lead">
-                  Everything is built by our bench joiners in the Romford workshop, from box sash windows to glass
-                  balustrades and fitted wardrobes.
+                  Each window we manufacture is individually crafted by our expert bench joiners to produce a window
+                  from the finest quality timber and materials.
                 </p>
                 <dl className="hero-facts">
-                  <div><dt>Windows</dt><dd>Box sash, bay</dd></div>
-                  <div><dt>Doors</dt><dd>French, glazed, internal</dd></div>
-                  <div><dt>Open</dt><dd>Mon to Fri, 8am to 6pm</dd></div>
+                  <div><dt>Windows</dt><dd>Box sash and casement</dd></div>
+                  <div><dt>Doors</dt><dd>French doors</dd></div>
+                  <div><dt>Staircases</dt><dd>Oak and softwood</dd></div>
                 </dl>
               </div>
               <div className="hero-visual frame frame--photo span-6 start-7">
-                <Photo className="frame__img" name="black-bay-windows" eager sizes="(min-width: 1024px) 628px, 100vw" pos="50% 50%" />
+                <Photo className="frame__img" name="bay-sash" eager sizes="(min-width: 1024px) 628px, 100vw" pos="50% 50%" />
               </div>
             </div>
           </div>
         </section>
 
-        <Peek
+        <Split
           id="windows"
-          title="Windows and doors"
-          line="Every window and door is cut to your opening, in the style your building needs."
-          rows={[
-            { key: 'sash', name: 'Box sash windows', line: 'Traditional sliding sashes, built to match the originals.', photo: 'sash-kitchen', pos: '50% 40%' },
-            { key: 'bay', name: 'Bay windows', line: 'Bay windows made to the width of your wall.', photo: 'bay-window-white', pos: '50% 50%' },
-            { key: 'french', name: 'French doors', line: 'Glazed double doors in a new pine lining, painted to match.', photo: 'french-doors-white', pos: '50% 40%' },
-            { key: 'glazed', name: 'Glazed doors', line: 'Doors with glazing in your own pattern, with side lights if you need them.', photo: 'door-glazed-geometric', pos: '50% 40%' },
-            { key: 'internal', name: 'Internal doors', line: 'Panelled and vertical-board doors in the size of your frame.', photo: 'doors-vertical-panel', pos: '50% 40%' },
-          ]}
-        />
+          title="Traditional box sash windows and casement"
+          line="We are proud to provide our clients with superior-quality, made-to-measure traditional bespoke box & sash windows."
+          photo="sash-pair"
+          pos="50% 40%"
+        >
+          <p>
+            Our primary objective is to offer our clients the best service in order to meet their design and performance
+            needs. All of our wooden sash windows are made with the finest materials including softwood and hardwood and
+            are designed and built with professional tools and equipment.
+          </p>
+          <p>
+            MQ Joinery manufactures wooden sash windows and casement windows, both available in hardwood or softwood. All
+            windows are double glazed with toughened glass to your specification, with a draught seal all around the
+            sashes.
+          </p>
+        </Split>
 
-        <Peek
+        <section className="section sec-peek" id="specification" aria-labelledby="specification-h">
+          <div className="wrap">
+            <Head id="specification" title="Window specification" line="All manufactured in our workshop." />
+            <div className="grid grid--top">
+              <div className="span-6">
+                <Rows
+                  items={[
+                    'Mortice and tenon joints for strength, preventing jams and wobbles for smooth use',
+                    'Traditional style with horns',
+                    'European red wood for softwood, and Oak or Meranti for hardwood',
+                    'Sash weight or spring balance',
+                    'Weatherproof seal',
+                    'All windows are painted white primer',
+                  ]}
+                />
+              </div>
+              <div className="span-6 start-7">
+                <Rows
+                  items={[
+                    'All hardware is included: lock, bottom sash lift and pulley',
+                    'Double glazed',
+                    'Custom design',
+                    'Every window made in our workshop',
+                  ]}
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <Split id="glass" title="Glass description and specification" line="High quality double glazed units." photo="sash-bathroom" pos="50% 40%">
+          <Rows
+            items={[
+              'High quality double glazed units',
+              'Pilkington K glass: the K effect reflects heat from the internal pane back into your property, to maximise your home\'s heating, while letting in free heat from the sun',
+              'All glass comes toughened',
+              'Cavities filled with argon gas',
+            ]}
+          />
+        </Split>
+
+        <Split
           id="staircases"
-          title="Staircases and fitted joinery"
-          line="Stairs, balustrades and wardrobes, built to the space they fill."
-          rows={[
-            { key: 'glass', name: 'Glass balustrades', line: 'Black framed glass panels on landings and stair flights.', photo: 'stair-glass-hall', pos: '50% 40%' },
-            { key: 'spindles', name: 'Spindle balustrades', line: 'Turned spindles, newel posts and finials in pine or paint.', photo: 'newel-stairs', pos: '50% 35%' },
-            { key: 'handrails', name: 'Handrails', line: 'Wall-mounted timber handrails on black brackets.', photo: 'handrail-pine', pos: '50% 50%' },
-            { key: 'wardrobes', name: 'Fitted wardrobes', line: 'Wardrobes built to the wall, floor to ceiling.', photo: 'wardrobes-grey', pos: '50% 50%' },
-            { key: 'sheds', name: 'Sheds', line: 'Timber sheds with ledged doors, built to your space.', photo: 'shed-pine', pos: '50% 50%' },
-          ]}
-        />
+          title="Staircases"
+          line="We offer a wide range of staircase designs, whichever is best suited to your property."
+          photo="pine-stair-hall"
+          pos="50% 50%"
+        >
+          <Rows
+            items={[
+              'Straight flights',
+              'Cut string staircases',
+              'Kite winders staircases',
+              'D shape and bullnose steps',
+              'Closed or open treads',
+              'Quarter and half landing areas',
+              'Glazed panels and rails',
+            ]}
+          />
+        </Split>
+
+        <Split
+          id="staircase-build"
+          title="Built to your design"
+          line="All of our staircases are handcrafted from rough sawn Oak timbers and softwood."
+          photo="oak-landing"
+          pos="50% 50%"
+        >
+          <p>
+            We supply the balustrade to meet your design, including wooden spindles and toughened and polished glass or
+            metal spindles.
+          </p>
+          <p>
+            When working with MQ Joinery, staircases can be manufactured and assembled to your exact design, with
+            compliant installation by our certified fitting team.
+          </p>
+        </Split>
+
+        <Split
+          id="french-doors"
+          title="French doors"
+          line="We have a team of experienced joiners that can design and build your French doors according to the exact specifications of your property."
+          photo="french-doors-fitting"
+          pos="50% 50%"
+        >
+          <p>
+            We use quality woods for all our projects: softwood such as European red wood, and hardwood such as Oak,
+            Sapele and Meranti.
+          </p>
+          <p>
+            Our workshop is based in Romford, where we work with professional heavy woodworking machinery, ensuring we
+            finish your project to a high quality standard.
+          </p>
+        </Split>
+
+        <Split
+          id="how"
+          title="How it works"
+          line="We measure, we make & we fit."
+          photo="handrail-pine"
+          pos="50% 50%"
+        >
+          <p>
+            When you contact MQ Joinery we arrange an appointment to visit your property. Measurements of the job
+            requested are taken and a free quote is provided. If you are happy to proceed, a start date for the build is
+            agreed, along with the time for delivery and installation.
+          </p>
+          <p>
+            A 50% deposit is taken prior to starting the job and the remainder is paid upon completion, on the day of
+            delivery of the project.
+          </p>
+        </Split>
       </main>
       <Footer />
       <Fab />

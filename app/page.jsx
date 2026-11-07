@@ -1,17 +1,16 @@
-import { withBase } from './base';
-import Frames from './components/Frames';
 import HeroVideo from './components/HeroVideo';
 import Photo from './components/Photo';
-import { Fab, Arrow, CallButton, Footer, Nav } from './components/Chrome';
+import Split, { Rows } from './components/Split';
+import { withBase } from './base';
+import { CallButton, Fab, Footer, Nav } from './components/Chrome';
 
 export const metadata = { title: 'MQ Joinery: made-to-measure joinery in Romford' };
 
 const rows = [
-  { key: 'windows', name: 'Windows', line: 'Traditional box sash windows, casements and bays, made to fit your opening.', photo: 'sash-kitchen', pos: '50% 40%' },
-  { key: 'doors', name: 'Doors', line: 'French doors, glazed doors and internal doors in the size your frame needs.', photo: 'french-doors-white', pos: '50% 40%' },
-  { key: 'stairs', name: 'Staircases', line: 'Spindles, newel posts, handrails and glass balustrades.', photo: 'newel-stairs', pos: '50% 35%' },
-  { key: 'wardrobes', name: 'Wardrobes', line: 'Fitted wardrobes built to the wall, floor to ceiling.', photo: 'wardrobes-grey', pos: '50% 50%' },
-  { key: 'garden', name: 'Garden joinery', line: 'Sheds and timber outbuildings built to the space in your garden.', photo: 'shed-pine', pos: '50% 50%' },
+  { key: 'windows', name: 'Box sash and casement windows', line: 'Made-to-measure traditional bespoke windows, individually crafted by our expert bench joiners.', photo: 'sash-kitchen', pos: '50% 40%' },
+  { key: 'doors', name: 'French doors', line: 'Designed and built by our experienced joiners to the exact specifications of your property.', photo: 'french-doors-white', pos: '50% 40%' },
+  { key: 'stairs', name: 'Staircases', line: 'Handcrafted from rough sawn Oak timbers and softwood, to your exact design.', photo: 'newel-stairs', pos: '50% 35%' },
+  { key: 'more', name: 'And more', line: 'Years of experience in designing and fitting a variety of staircases, windows, doors and more.', photo: 'wardrobes-grey', pos: '50% 50%' },
 ];
 
 export default function Home() {
@@ -25,8 +24,8 @@ export default function Home() {
               <div className="hero-copy span-6">
                 <h1 id="hero-h">Made-to-measure joinery, crafted in Romford</h1>
                 <p className="t-lead">
-                  Box sash windows, French doors and staircases, built by bench joiners in our own workshop with
-                  professional woodworking machinery.
+                  We are proud to provide our clients with superior-quality, made-to-measure traditional bespoke box
+                  &amp; sash windows.
                 </p>
                 <div className="btn-row">
                   <CallButton arrow />
@@ -35,7 +34,7 @@ export default function Home() {
                 <dl className="hero-facts">
                   <div><dt>Workshop</dt><dd>Navestock, Romford</dd></div>
                   <div><dt>Open</dt><dd>Mon to Fri, 8am to 6pm</dd></div>
-                  <div><dt>Made</dt><dd>To measure, in timber</dd></div>
+                  <div><dt>Service</dt><dd>We measure, we make &amp; we fit</dd></div>
                 </dl>
               </div>
               <div className="hero-visual frame frame--photo span-6 start-7">
@@ -48,8 +47,8 @@ export default function Home() {
         <section className="section sec-peek" id="services" aria-labelledby="services-h">
           <div className="wrap">
             <div className="section-head">
-              <h2 id="services-h">Windows, doors and staircases</h2>
-              <p>Every piece is cut to your opening and finished in our workshop.</p>
+              <h2 id="services-h">What we do</h2>
+              <p>Our primary objective is to offer our clients the best service in order to meet their design and performance needs.</p>
             </div>
             <div className="grid grid--top fill" data-peek="">
               <ul className="rows span-6">
@@ -62,34 +61,31 @@ export default function Home() {
               </ul>
               <div className="frame frame--photo frame--fill span-6 start-7">
                 {rows.map((r, i) => (
-                  <Photo
-                    key={r.key}
-                    className="frame__img"
-                    name={r.photo}
-                    data-peek-for={r.key}
-                    hidden={i === 0 ? undefined : true}
-                    fixed
-                    pos={r.pos}
-                    sizes="(min-width: 1024px) 628px, 100vw"
-                  />
+                  <Photo key={r.key} className="frame__img" name={r.photo} data-peek-for={r.key} hidden={i === 0 ? undefined : true} fixed pos={r.pos} />
                 ))}
               </div>
             </div>
           </div>
         </section>
 
-        <Frames
-          cls="sec-triple"
-          id="work"
-          title="Staircases we have built"
-          line="Glass, spindle and turned-post balustrades, made for the stairs they stand on."
-          span="span-4"
-          items={[
-            ['stair-glass-hall', '50% 40%', withBase('/services/#staircases')],
-            ['glass-balustrade', '50% 50%', withBase('/services/#staircases')],
-            ['arch-stairs', '50% 50%', withBase('/services/#staircases')],
-          ]}
-        />
+        <Split
+          id="why"
+          title="Why choose us"
+          line="Providers of quality bespoke joinery. At MQ Joinery we have years of experience in designing and fitting a variety of different staircases, windows, doors and more."
+          photo="pine-stair-hall"
+          pos="50% 50%"
+        >
+          <Rows
+            items={[
+              'An experienced team of professionals',
+              'All our work is done with advanced heavy woodworking machinery',
+              'We use the finest woods such as soft wood and hard wood for all our work',
+              'All our work is completed to a high standard and our attention to detail enables a high quality finish, which will complement any interior',
+              'Excellent job with a competitive and attractive price',
+              'We measure, we make & we fit',
+            ]}
+          />
+        </Split>
       </main>
       <Footer />
       <Fab />

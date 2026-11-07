@@ -22,7 +22,7 @@ export function CallButton({ className = 'btn btn--primary', arrow = false, chil
 function Logo() {
   return (
     <a className="nav__logo" href={withBase('/')}>
-      <img className="logo-img" src={withBase('/assets/img/logo-mq.webp')} width="300" height="180" alt="MQ Joinery" />
+      <img className="logo-img" src={withBase('/assets/img/logo-mq.webp')} width="640" height="170" alt="MQ Joinery" />
     </a>
   );
 }
@@ -98,7 +98,7 @@ export function Footer({ heading = 'Talk to a joiner about your job', line }) {
           </div>
           <div className="footer__legal">
             <span>&copy; 2026 MQ Joinery</span>
-            <a className="credits" href={withBase('/credits/')}>Photographs by MQ Joinery and Unsplash</a>
+            <a className="credits" href={withBase('/credits/')}>Photographs by MQ Joinery</a>
           </div>
         </div>
       </div>
