@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { withBase } from '../base';
 
 // Muted, looping workshop film behind the hero. It rests under reduced motion and has a pause button.
 export default function HeroVideo() {
@@ -26,8 +27,8 @@ export default function HeroVideo() {
         ref={ref}
         className="frame__img"
         style={{ objectPosition: '45% 40%' }}
-        src="/assets/video/workshop.mp4"
-        poster="/assets/video/workshop-poster.webp"
+        src={withBase('/assets/video/workshop.mp4')}
+        poster={withBase('/assets/video/workshop-poster.webp')}
         autoPlay
         muted
         loop

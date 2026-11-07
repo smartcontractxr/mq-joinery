@@ -1,3 +1,5 @@
+import { withBase } from './base';
+
 // Every photograph on the site: file stem in public/assets/img, size of its 1200 file, alt text and source.
 // source: "client" = supplied by MQ Joinery; "unsplash" = a stock frame that came in the client's folder.
 export const photos = {
@@ -29,5 +31,5 @@ export const photos = {
 };
 
 export function src(name, w) {
-  return `/assets/img/${name}-${w}.webp`;
+  return withBase(`/assets/img/${name}-${w}.webp`);
 }
