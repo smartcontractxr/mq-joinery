@@ -1,0 +1,38 @@
+/* Page CSS: section heights at the tablet and phone, the wordmark, the phone icons and a tighter footer. */
+html .hero--statement .hero__facts { border-top: 0; }
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .sec-triple { --h: 2; }
+  #visit .tile { --tile-ratio: 16 / 10 !important; }
+}
+@media (max-width: 639px) {
+  .sec-peek, .sec-triple { --hm: 2; }
+  html .hero--statement .hero__facts { display: grid; }
+}
+
+/* The client's saw logo, sized to the bar. */
+.nav__logo .logo-img { height: 56px; width: auto; }
+@media (max-width: 639px) { .nav__logo .logo-img { height: 44px; } }
+
+/* The close sits right above the address instead of a screen apart. */
+html footer.closing > .wrap { grid-template-rows: auto auto; align-content: start; row-gap: var(--s-8); }
+html footer.closing .closing__cta { gap: var(--s-4); }
+
+/* Contact page: one action per device. */
+@media (min-width: 640px) { html .only-mobile { display: none !important; } }
+@media (max-width: 639px) { html .hide-mobile { display: none !important; } }
+
+/* Phone: no Call us in the bar; two small icons float at the bottom right instead. */
+.fab { display: none; }
+@media (max-width: 639px) {
+  html .nav .nav__actions, html .nav:not(.is-open) .nav__actions, html .nav.is-open .nav__actions { display: none !important; }
+  .fab { display: flex; flex-direction: column; gap: 12px; position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); z-index: 9; }
+  .fab__btn { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--line-strong); box-shadow: 0 2px 8px rgb(43 33 24 / 0.18); }
+  .fab__btn--call { background: var(--action); color: var(--action-ink); border-color: transparent; }
+  .fab__btn--wa { background: #fff; }
+}
+
+@media (max-width: 639px) {
+  html .nav .nav__bar { justify-content: space-between; }
+  html .nav .nav__toggle { margin-left: auto !important; }
+}
