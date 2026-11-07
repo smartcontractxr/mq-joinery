@@ -84,7 +84,7 @@ export default function Services() {
           </div>
         </section>
 
-        <Split id="glass" title="Glass description and specification" line="High quality double glazed units." photo="bay-sash" pos="50% 50%">
+        <Split id="glass" title="Glass description and specification" line="High quality double glazed units." photo="sash-bathroom" pos="50% 40%">
           <Rows
             items={[
               'High quality double glazed units',

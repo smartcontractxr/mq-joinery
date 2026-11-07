@@ -20,13 +20,13 @@ export default function About() {
                 <h1 id="hero-h">Joinery workshop in Romford</h1>
                 <p className="hero__lead">We are passionate about what we do, from the start of the build through to installation.</p>
               </div>
-              <div className="ly-collage span-6 start-4" role="img" aria-label="A new oak landing, a pine staircase and sash windows">
+              <div className="ly-collage span-6 start-4" role="img" aria-label="Fitted wardrobes, sash windows and a glazed door">
                 <div className="ly-collage__set is-on">
                   <div className="ly-piece" style={{ left: '0%', top: '0%', width: '100%', height: '62%' }}>
-                    <Photo name="oak-landing" fixed eager alt="" />
+                    <Photo name="wardrobes-grey" fixed eager alt="" />
                   </div>
                   <div className="ly-piece" style={{ left: '0%', top: '66%', width: '48%', height: '34%' }}>
-                    <Photo name="pine-stair-finial" fixed eager alt="" pos="50% 40%" />
+                    <Photo name="door-glazed-geometric" fixed eager alt="" pos="50% 40%" />
                   </div>
                   <div className="ly-piece" style={{ left: '52%', top: '66%', width: '48%', height: '34%' }}>
                     <Photo name="sash-pair" fixed eager alt="" pos="50% 40%" />
@@ -41,7 +41,7 @@ export default function About() {
           id="about"
           title="About us"
           line="Experienced, talented, reliable and trustworthy."
-          photo="pine-newel-turned"
+          photo="sash-bathroom"
           pos="50% 40%"
         >
           <Rows
@@ -57,7 +57,7 @@ export default function About() {
           id="craft"
           title="Passionate about what we do"
           line="We are proud to provide our clients with superior-quality, made-to-measure traditional bespoke box & sash windows."
-          photo="pine-stair-brick"
+          photo="oak-landing"
           pos="50% 50%"
         >
           <p>
