@@ -1,7 +1,7 @@
 import { withBase } from './base';
 
 // Every photograph on the site: file stem in public/assets/img, size of its 1200 file, alt text and source.
-// source: "client" = supplied by MQ Joinery; "unsplash" = a stock frame that came in the client's folder.
+// source: "client" = supplied by MQ Joinery.
 export const photos = {
   'door-glazed-geometric': { w: 1200, h: 1500, source: 'client', alt: 'White interior door with a geometric glazed panel and a pine-lined side light' },
   'sash-kitchen': { w: 1200, h: 1500, source: 'client', alt: 'Restored box sash window over a kitchen sink' },
@@ -27,7 +27,14 @@ export const photos = {
   'timber-casement': { w: 785, h: 1188, source: 'client', alt: 'Timber casement window with glazing bars' },
   'bath-panel': { w: 1024, h: 574, source: 'client', alt: 'Painted timber bath panel in a bathroom' },
   'timber-steps-outdoor': { w: 1024, h: 574, source: 'client', alt: 'New timber steps beside a white painted wall' },
-  'hands-sanding': { w: 800, h: 560, source: 'unsplash', alt: 'Hands sanding a board on a workshop floor' },
+  'oak-landing': { w: 1200, h: 900, source: 'client', alt: 'Oak balustrade with square spindles on a new landing' },
+  'pine-stair-hall': { w: 1200, h: 900, source: 'client', alt: 'New pine staircase with a plain handrail in a hallway' },
+  'sash-bathroom': { w: 1200, h: 1600, source: 'client', alt: 'White box sash window above a bath' },
+  'pine-stair-brick': { w: 1200, h: 900, source: 'client', alt: 'Pine staircase with spindles beside an exposed brick wall' },
+  'bay-sash': { w: 1200, h: 1600, source: 'client', alt: 'Bay of three box sash windows with pine linings' },
+  'sash-pair': { w: 1200, h: 1600, source: 'client', alt: 'Two box sash windows in a new room' },
+  'pine-stair-finial': { w: 1200, h: 1600, source: 'client', alt: 'Pine staircase with turned spindles and an acorn finial' },
+  'pine-newel-turned': { w: 1200, h: 1600, source: 'client', alt: 'Turned newel post with an acorn finial and pine spindles' },
 };
 
 export function src(name, w) {

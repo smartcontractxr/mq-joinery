@@ -53,10 +53,24 @@ export default function Contact() {
                   <a className="link" href={site.directions}>Get directions</a>
                 </p>
                 <Hours />
+                <ul className="rows">
+                  <li>
+                    <span className="rows__name">Tel</span>
+                    <p><a className="link" href={site.tel}>+44 (0) 7746 572 349</a></p>
+                  </li>
+                  <li>
+                    <span className="rows__name">Email</span>
+                    <p><a className="link" href={site.email}>mqjoinery89@gmail.com</a></p>
+                  </li>
+                  <li>
+                    <span className="rows__name">Instagram</span>
+                    <p><a className="link" href="https://www.instagram.com/mqjoinery89/" target="_blank" rel="noopener noreferrer">@mqjoinery89</a></p>
+                  </li>
+                </ul>
               </div>
               <div className="tile span-6" style={{ '--tile-ratio': '4 / 3' }}>
                 <div className="tile__media">
-                  <Photo name="handrail-pine" fixed />
+                  <Photo name="pine-newel-turned" fixed pos="50% 40%" />
                 </div>
               </div>
             </div>

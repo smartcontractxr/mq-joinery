@@ -1,12 +1,11 @@
-import { withBase } from '../base';
-import Frames from '../components/Frames';
 import Photo from '../components/Photo';
+import Split, { Rows } from '../components/Split';
 import { Fab, Footer, Nav } from '../components/Chrome';
 
 export const metadata = {
   title: 'About: bench joiners in Romford | MQ Joinery',
   description:
-    'MQ Joinery combines traditional craftsmanship with modern machinery in a Navestock workshop, making bespoke joinery from fine timber.',
+    'MQ Joinery is experienced, professional and trustworthy: bespoke joinery from the start of the build through to installation.',
 };
 
 export default function About() {
@@ -19,18 +18,18 @@ export default function About() {
             <div className="hero-text grid hero__grid">
               <div className="span-3">
                 <h1 id="hero-h">Joinery workshop in Romford</h1>
-                <p className="hero__lead">Windows, doors and staircases made to measure in Navestock. Open 8am to 6pm, Monday to Friday.</p>
+                <p className="hero__lead">We are passionate about what we do, from the start of the build through to installation.</p>
               </div>
-              <div className="ly-collage span-6 start-4" role="img" aria-label="Hands sanding a board, a pine balustrade and a turned-post staircase">
+              <div className="ly-collage span-6 start-4" role="img" aria-label="A new oak landing, a pine staircase and sash windows">
                 <div className="ly-collage__set is-on">
                   <div className="ly-piece" style={{ left: '0%', top: '0%', width: '100%', height: '62%' }}>
-                    <Photo name="hands-sanding" fixed eager alt="" />
+                    <Photo name="oak-landing" fixed eager alt="" />
                   </div>
                   <div className="ly-piece" style={{ left: '0%', top: '66%', width: '48%', height: '34%' }}>
-                    <Photo name="spindles-pine" fixed eager alt="" pos="50% 40%" />
+                    <Photo name="pine-stair-finial" fixed eager alt="" pos="50% 40%" />
                   </div>
                   <div className="ly-piece" style={{ left: '52%', top: '66%', width: '48%', height: '34%' }}>
-                    <Photo name="newel-stairs" fixed eager alt="" pos="50% 35%" />
+                    <Photo name="sash-pair" fixed eager alt="" pos="50% 40%" />
                   </div>
                 </div>
               </div>
@@ -38,30 +37,43 @@ export default function About() {
           </div>
         </section>
 
-        <Frames
-          cls="sec-pair"
-          id="craft"
-          title="Joinery in our workshop"
-          line="Our bench joiners blend traditional craftsmanship with modern techniques, so each piece is made the way it always was, to a finer tolerance."
-          span="span-6"
-          items={[
-            ['handrail-pine', '50% 50%'],
-            ['white-stair-finial', '50% 50%'],
-          ]}
-        />
+        <Split
+          id="about"
+          title="About us"
+          line="Experienced, talented, reliable and trustworthy."
+          photo="pine-newel-turned"
+          pos="50% 40%"
+        >
+          <Rows
+            items={[
+              ['Experienced', 'We have years of experience in building a variety of bespoke projects.'],
+              ['Professional', 'When starting any project we ensure we use the right professional machinery and the finest of materials.'],
+              ['Trustworthy', 'When working with MQ Joinery you can rest assured your property will be in the safest of hands.'],
+            ]}
+          />
+        </Split>
 
-        <Frames
-          cls="sec-triple"
-          id="made"
-          title="Windows, doors and sheds made to measure"
-          line="From a single door to a full staircase, each piece is built for the opening it fills."
-          span="span-4"
-          items={[
-            ['sash-kitchen', '50% 40%', withBase('/services/#windows')],
-            ['french-doors-white', '50% 40%', withBase('/services/#doors')],
-            ['shed-pine', '50% 50%', withBase('/services/#fitted')],
-          ]}
-        />
+        <Split
+          id="craft"
+          title="Passionate about what we do"
+          line="We are proud to provide our clients with superior-quality, made-to-measure traditional bespoke box & sash windows."
+          photo="pine-stair-brick"
+          pos="50% 50%"
+        >
+          <p>
+            Each window we manufacture is individually crafted by our expert bench joiners to produce a window from the
+            finest quality timber and materials.
+          </p>
+          <p>
+            All our work is completed to a high standard; our attention to detail enables us to produce a high quality
+            finish. Our staff have years of experience in designing and building astonishing wooden sash windows using
+            advanced machinery.
+          </p>
+          <p>
+            At MQ Joinery we are passionate about what we do, from the start of the build through to installation. We
+            handle every bespoke piece with compassion and care.
+          </p>
+        </Split>
       </main>
       <Footer />
       <Fab />

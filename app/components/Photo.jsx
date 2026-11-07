@@ -2,7 +2,7 @@ import { photos, src } from '../photos';
 
 // One photograph from the client's folder, as a 600 and a 1200 WebP.
 // Landscape sources shown in tall, cropped frames need their full file on a phone, not the 600 one.
-const FULL_ONLY = new Set(['wardrobes-grey', 'handrail-pine', 'bath-panel', 'timber-steps-outdoor', 'bay-window-white', 'sash-kitchen']);
+const FULL_ONLY = new Set(['wardrobes-grey', 'handrail-pine', 'bath-panel', 'timber-steps-outdoor', 'bay-window-white', 'sash-kitchen', 'oak-landing', 'pine-stair-hall', 'pine-stair-brick']);
 
 export default function Photo({ name, sizes, eager = false, className, style, pos, big = false, fixed = false, ...rest }) {
   const p = photos[name];
