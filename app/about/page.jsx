@@ -1,3 +1,4 @@
+import { withBase } from '../base';
 import Frames from '../components/Frames';
 import Photo from '../components/Photo';
 import { Fab, Footer, Nav } from '../components/Chrome';
@@ -56,9 +57,9 @@ export default function About() {
           line="From a single door to a full staircase, each piece is built for the opening it fills."
           span="span-4"
           items={[
-            ['sash-kitchen', '50% 40%', '/services/#windows'],
-            ['french-doors-white', '50% 40%', '/services/#doors'],
-            ['shed-pine', '50% 50%', '/services/#fitted'],
+            ['sash-kitchen', '50% 40%', withBase('/services/#windows')],
+            ['french-doors-white', '50% 40%', withBase('/services/#doors')],
+            ['shed-pine', '50% 50%', withBase('/services/#fitted')],
           ]}
         />
       </main>

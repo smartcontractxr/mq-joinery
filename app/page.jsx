@@ -1,3 +1,4 @@
+import { withBase } from './base';
 import Frames from './components/Frames';
 import HeroVideo from './components/HeroVideo';
 import Photo from './components/Photo';
@@ -29,7 +30,7 @@ export default function Home() {
                 </p>
                 <div className="btn-row">
                   <CallButton arrow />
-                  <a className="btn btn--secondary" href="/services/">See our services</a>
+                  <a className="btn btn--secondary" href={withBase('/services/')}>See our services</a>
                 </div>
                 <dl className="hero-facts">
                   <div><dt>Workshop</dt><dd>Navestock, Romford</dd></div>
@@ -84,9 +85,9 @@ export default function Home() {
           line="Glass, spindle and turned-post balustrades, made for the stairs they stand on."
           span="span-4"
           items={[
-            ['stair-glass-hall', '50% 40%', '/services/#staircases'],
-            ['glass-balustrade', '50% 50%', '/services/#staircases'],
-            ['arch-stairs', '50% 50%', '/services/#staircases'],
+            ['stair-glass-hall', '50% 40%', withBase('/services/#staircases')],
+            ['glass-balustrade', '50% 50%', withBase('/services/#staircases')],
+            ['arch-stairs', '50% 50%', withBase('/services/#staircases')],
           ]}
         />
       </main>

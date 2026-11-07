@@ -1,5 +1,6 @@
 import KitScripts from './components/KitScripts';
 import './globals.css';
+import { withBase } from './base';
 
 export const metadata = {
   title: 'MQ Joinery: made-to-measure joinery in Romford',
@@ -34,12 +35,12 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Instrument+Sans:wdth,wght@75..100,400..600&display=swap"
           rel="stylesheet"
         />
-        <link rel="stylesheet" href="/assets/system.css" />
-        <link rel="stylesheet" href="/assets/ui/cards.css" />
-        <link rel="stylesheet" href="/assets/motion/motion.css" />
-        <link rel="stylesheet" href="/assets/backgrounds/backgrounds.css" />
-        <link rel="stylesheet" href="/assets/layout/layout.css" />
-        <link rel="stylesheet" href="/assets/icons/icon.css" />
+        <link rel="stylesheet" href={withBase("/assets/system.css")} />
+        <link rel="stylesheet" href={withBase("/assets/ui/cards.css")} />
+        <link rel="stylesheet" href={withBase("/assets/motion/motion.css")} />
+        <link rel="stylesheet" href={withBase("/assets/backgrounds/backgrounds.css")} />
+        <link rel="stylesheet" href={withBase("/assets/layout/layout.css")} />
+        <link rel="stylesheet" href={withBase("/assets/icons/icon.css")} />
         <style dangerouslySetInnerHTML={{ __html: root }} />
       </head>
       <body suppressHydrationWarning>

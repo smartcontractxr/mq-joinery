@@ -1,4 +1,5 @@
 import { site } from '../site';
+import { withBase } from '../base';
 
 export function Arrow() {
   return (
@@ -20,8 +21,8 @@ export function CallButton({ className = 'btn btn--primary', arrow = false, chil
 
 function Logo() {
   return (
-    <a className="nav__logo" href="/">
-      <img className="logo-img" src="/assets/img/logo-mq.webp" width="300" height="180" alt="MQ Joinery" />
+    <a className="nav__logo" href={withBase('/')}>
+      <img className="logo-img" src={withBase('/assets/img/logo-mq.webp')} width="300" height="180" alt="MQ Joinery" />
     </a>
   );
 }
@@ -34,7 +35,7 @@ export function Nav({ current }) {
         <nav className="nav__links" aria-label="Main">
           {site.nav.map((item) => (
             <div className="nav__item" key={item.href}>
-              <a className="nav__link" href={item.href} aria-current={item.href === current ? 'page' : undefined}>
+              <a className="nav__link" href={withBase(item.href)} aria-current={item.href === current ? 'page' : undefined}>
                 {item.label}
               </a>
             </div>
@@ -97,7 +98,7 @@ export function Footer({ heading = 'Talk to a joiner about your job', line }) {
           </div>
           <div className="footer__legal">
             <span>&copy; 2026 MQ Joinery</span>
-            <a className="credits" href="/credits/">Photographs by MQ Joinery and Unsplash</a>
+            <a className="credits" href={withBase('/credits/')}>Photographs by MQ Joinery and Unsplash</a>
           </div>
         </div>
       </div>
@@ -115,7 +116,7 @@ export function Fab() {
         </svg>
       </a>
       <a className="fab__btn fab__btn--wa" href={site.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp MQ Joinery">
-        <img src="/assets/icons/whatsapp.svg" width="24" height="24" alt="" />
+        <img src={withBase('/assets/icons/whatsapp.svg')} width="24" height="24" alt="" />
       </a>
     </div>
   );
